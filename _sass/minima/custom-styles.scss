@@ -8,4 +8,18 @@
 /*----- ADD YOUR STYLES BELOW -------*/
 
 // If you want to turn off dark background for syntax highlighting, comment or delete the below line.
-@import "minima/fastpages-dracula-highlight"; 
+//@import "minima/fastpages-dracula-highlight"; 
+.post-link {
+  @include relative-font-size(1.2);
+}
+
+.post-list {
+  > li {
+    margin-bottom: 1rem;
+  }
+}
+
+.post-meta {
+  font-weight: normal;
+  @include relative-font-size(1.2);
+}

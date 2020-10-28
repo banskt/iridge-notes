@@ -1,9 +1,11 @@
-<h3>
+<p>
     <a class="post-link" href="{{ post.url | relative_url }}">
     {{ post.title | escape }}
-    </a>
-</h3>
+    </a><span class="post-meta">{{ post.date | date: date_format }}</span>
+</p>
 {%- if site.show_description and post.description  -%}
 <p class="post-meta-description">{{ post.description }}</p>
 {%- endif -%}
+<!--
 <p class="post-meta">{{ post.date | date: date_format }}</p>
+-->
