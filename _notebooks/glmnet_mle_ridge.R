@@ -13,22 +13,22 @@ ridge_data = function(n, p, sd){
   X = standardize(X)
   y = drop(X %*% btrue + sd*rnorm(n))
   y = y - mean(y)
+  y = y / sd(y)
   return (list(X = X, y = y))
 }
 
-ridge_ols = function(y, X, lmbda) {
+ridge_map = function(y, X, lmbda) {
   XtX = crossprod(X)
   Xty = drop(crossprod(X,y))
   yty = drop(crossprod(y))
   p = ncol(X)
   V = XtX + diag(lmbda, p)
   Vinv = chol2inv(chol(V))
-  bhat = drop(V %*% Xty)
+  bhat = drop(Vinv %*% Xty)
   return (list(coef = bhat, ypred = drop(X %*% bhat)))
 }
 
-ridge_glmnet = function(y, X, lmbda) {
-  glm_lmbda = 2 * lmbda / nrow(X)
+ridge_glmnet = function(y, X, glm_lmbda) {
   fit = glmnet(X, y, alpha = 0, lambda = glm_lmbda, intercept = FALSE, standardize = FALSE)
   b = coef(fit, s = glm_lmbda)  # extract coefficients at a single value of lambda
   ypred = c(predict(fit, newx = X, s = c(glm_lmbda)))  # make predictions
@@ -52,15 +52,19 @@ rsquare = function(ytrue, ypred) {
   return (rsq)
 }
 
-n = 50
-p = 100
+n = 200
+p = 4
 sd = 2
 data = ridge_data(n, p, sd)
 lmbda = sd * sd
-r_ols = ridge_ols(data$y, data$X, lmbda)
-r_glmnet = ridge_glmnet(data$y, data$X, lmbda)
+glm_lmbda = lmbda / n
+r_map = ridge_map(data$y, data$X, lmbda)
+r_glmnet = ridge_glmnet(data$y, data$X, glm_lmbda)
 r_glmnet_cv = ridge_glmnet_cv(data$y, data$X)
 
-rsquare(data$y, r_ols$ypred)
+rsquare(data$y, r_map$ypred)
 rsquare(data$y, r_glmnet$ypred)
 rsquare(data$y, r_glmnet_cv$ypred)
+
+r_map$coef
+r_glmnet$b
