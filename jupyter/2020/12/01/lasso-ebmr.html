@@ -11,13 +11,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Notes and ideas (in many cases, incomplete or broken) for implementing empirical Bayes multiple regression idea of Matthew Stephens." />
 <meta property="og:description" content="Notes and ideas (in many cases, incomplete or broken) for implementing empirical Bayes multiple regression idea of Matthew Stephens." />
-<link rel="canonical" href="https://banskt.github.io/iridge-notes/jupyter/2020/11/02/lasso-ebmr.html" />
-<meta property="og:url" content="https://banskt.github.io/iridge-notes/jupyter/2020/11/02/lasso-ebmr.html" />
+<link rel="canonical" href="https://banskt.github.io/iridge-notes/jupyter/2020/12/01/lasso-ebmr.html" />
+<meta property="og:url" content="https://banskt.github.io/iridge-notes/jupyter/2020/12/01/lasso-ebmr.html" />
 <meta property="og:site_name" content="iRidge" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-11-02T00:00:00-06:00" />
+<meta property="article:published_time" content="2020-12-01T00:00:00-06:00" />
 <script type="application/ld+json">
-{"description":"Notes and ideas (in many cases, incomplete or broken) for implementing empirical Bayes multiple regression idea of Matthew Stephens.","url":"https://banskt.github.io/iridge-notes/jupyter/2020/11/02/lasso-ebmr.html","@type":"BlogPosting","headline":"Bayes Lasso using EBMR","dateModified":"2020-11-02T00:00:00-06:00","datePublished":"2020-11-02T00:00:00-06:00","author":{"@type":"Person","name":"Saikat Banerjee"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://banskt.github.io/iridge-notes/jupyter/2020/11/02/lasso-ebmr.html"},"@context":"https://schema.org"}</script>
+{"description":"Notes and ideas (in many cases, incomplete or broken) for implementing empirical Bayes multiple regression idea of Matthew Stephens.","url":"https://banskt.github.io/iridge-notes/jupyter/2020/12/01/lasso-ebmr.html","@type":"BlogPosting","headline":"Bayes Lasso using EBMR","dateModified":"2020-12-01T00:00:00-06:00","datePublished":"2020-12-01T00:00:00-06:00","author":{"@type":"Person","name":"Saikat Banerjee"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://banskt.github.io/iridge-notes/jupyter/2020/12/01/lasso-ebmr.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/iridge-notes/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://banskt.github.io/iridge-notes/feed.xml" title="iRidge" /><link rel="shortcut icon" type="image/x-icon" href="/iridge-notes/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -88,8 +88,8 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Bayes Lasso using EBMR</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-11-02T00:00:00-06:00" itemprop="datePublished">
-        Nov 2, 2020
+    <h1 class="post-title p-name" itemprop="name headline">Bayes Lasso using EBMR</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-12-01T00:00:00-06:00" itemprop="datePublished">
+        Dec 1, 2020
       </time>
        • <span class="read-time" title="Estimated read time">
     
@@ -105,19 +105,19 @@ window.onload = wrap_img;
         <div class="pb-5 d-flex flex-wrap flex-justify-end">
           <div class="px-2">
 
-    <a href="https://github.com/banskt/iridge-notes/tree/master/_notebooks/2020-11-02-lasso-ebmr.ipynb" role="button" target="_blank">
+    <a href="https://github.com/banskt/iridge-notes/tree/master/_notebooks/2020-12-01-lasso-ebmr.ipynb" role="button" target="_blank">
 <img class="notebook-badge-image" src="/iridge-notes/assets/badges/github.svg" alt="View On GitHub">
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/banskt/iridge-notes/master?filepath=_notebooks%2F2020-11-02-lasso-ebmr.ipynb" target="_blank">
+    <a href="https://mybinder.org/v2/gh/banskt/iridge-notes/master?filepath=_notebooks%2F2020-12-01-lasso-ebmr.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/iridge-notes/assets/badges/binder.svg" alt="Open In Binder"/>
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://colab.research.google.com/github/banskt/iridge-notes/blob/master/_notebooks/2020-11-02-lasso-ebmr.ipynb" target="_blank">
+    <a href="https://colab.research.google.com/github/banskt/iridge-notes/blob/master/_notebooks/2020-12-01-lasso-ebmr.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/iridge-notes/assets/badges/colab.svg" alt="Open In Colab"/>
     </a>
 </div>
@@ -131,7 +131,7 @@ window.onload = wrap_img;
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
-# file to edit: _notebooks/2020-11-02-lasso-ebmr.ipynb
+# file to edit: _notebooks/2020-12-01-lasso-ebmr.ipynb
 -->
 
 <div class="container" id="notebook-container">
@@ -304,8 +304,8 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2020-12-01 12:48:10,709 | inference.ebmr | DEBUG | EBMR using dexp prior, em grr, full b posterior variance, direct inversion
-2020-12-01 12:48:10,710 | inference.ebmr | DEBUG | EBMR using point prior, em grr, full b posterior variance, direct inversion
+<pre>2020-12-01 12:55:43,172 | inference.ebmr | DEBUG | EBMR using dexp prior, em grr, full b posterior variance, direct inversion
+2020-12-01 12:55:43,173 | inference.ebmr | DEBUG | EBMR using point prior, em grr, full b posterior variance, direct inversion
 </pre>
 </div>
 </div>
@@ -406,51 +406,6 @@ window.onload = wrap_img;
 </div>
 </div>
 
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Lasso s2: </span><span class="si">{</span><span class="n">eblasso</span><span class="o">.</span><span class="n">s2</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Ridge s2: </span><span class="si">{</span><span class="n">ebridge</span><span class="o">.</span><span class="n">s2</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Lasso sb2: </span><span class="si">{</span><span class="n">eblasso</span><span class="o">.</span><span class="n">sb2</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Ridge sb2: </span><span class="si">{</span><span class="n">ebridge</span><span class="o">.</span><span class="n">sb2</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Lasso s2 x sb2: </span><span class="si">{</span><span class="n">eblasso</span><span class="o">.</span><span class="n">s2</span> <span class="o">*</span> <span class="n">eblasso</span><span class="o">.</span><span class="n">sb2</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Ridge s2 x sb2: </span><span class="si">{</span><span class="n">ebridge</span><span class="o">.</span><span class="n">s2</span> <span class="o">*</span> <span class="n">ebridge</span><span class="o">.</span><span class="n">sb2</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Lasso ELBO: </span><span class="si">{</span><span class="n">eblasso</span><span class="o">.</span><span class="n">elbo</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Ridge ELBO: </span><span class="si">{</span><span class="n">ebridge</span><span class="o">.</span><span class="n">elbo</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Lasso s2: 0.9751311723124263
-Ridge s2: 4.242547670659351
-Lasso sb2: 6.257167587197207
-Ridge sb2: 1.0920628653102455
-Lasso s2 x sb2: 6.101559164658928
-Ridge s2 x sb2: 4.633128765435559
-Lasso ELBO: -158.1321482293565
-Ridge ELBO: -139.93416637073932
-</pre>
-</div>
 </div>
 
 </div>
@@ -627,7 +582,7 @@ Ridge ELBO: -139.93416637073932
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/iridge-notes/jupyter/2020/11/02/lasso-ebmr.html" hidden></a>
+</script><a class="u-url" href="/iridge-notes/jupyter/2020/12/01/lasso-ebmr.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
