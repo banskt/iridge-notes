@@ -146,14 +146,13 @@ window.onload = wrap_img;
 <a class="anchor" href="#About" aria-hidden="true"><span class="octicon octicon-link"></span></a>About<a class="anchor-link" href="#About"> </a>
 </h3>
 <p>We consider the following hierarchical Empirical Bayes (EB) regression model:</p>
-<p>$
-\begin{align} \label{eqn:VEB_iridge1}
-    p\left(\mathbf{y} \mid s, \mathbf{b}\right) &amp;= N\left(\mathbf{y} \mid \mathbf{X}\mathbf{b}, s^2 I_n\right)  \\  \label{eqn:VEB_iridge2}
-    p\left(\mathbf{b} \mid s_b, s,\mathbf{W}\right) &amp;= N\left(\mathbf{b} \mid 0,s_b^2 s^2 \mathbf{W}\right) \\ \label{eqn:VEB_iridge3}
+\begin{equation}
+    p\left(\mathbf{y} \mid s, \mathbf{b}\right) &amp;= N\left(\mathbf{y} \mid \mathbf{X}\mathbf{b}, s^2 I_n\right)
+\end{equation}\begin{equation}
+    p\left(\mathbf{b} \mid s_b, s,\mathbf{W}\right) &amp;= N\left(\mathbf{b} \mid 0,s_b^2 s^2 \mathbf{W}\right)
+\end{equation}\begin{equation}
     p\left(w_j \mid g\right) &amp;= g \in \mathcal{G}.
-\end{align}
-$</p>
-<p>where $\mathbf{W}=\mathrm{diag}(w_1,\dots,w_p)$ is a diagonal matrix of prior variances, $s, s_b$ are scalars, and $g$ is a prior distribution that is to be estimated. We refer to the model as the <strong>Empirical Bayes Multiple Regression (EBMR)</strong>. We split this model into two overlapping parts:</p>
+\end{equation}<p>where $\mathbf{W}=\mathrm{diag}(w_1,\dots,w_p)$ is a diagonal matrix of prior variances, $s, s_b$ are scalars, and $g$ is a prior distribution that is to be estimated. We refer to the model as the <strong>Empirical Bayes Multiple Regression (EBMR)</strong>. We split this model into two overlapping parts:</p>
 <ol>
 <li>The first two equations define the Generalized Ridge Regression (GRR) model. </li>
 <li>We call the combination of the last two equations as the  "Empirical Bayes Normal Variances" (EBNV) model.</li>
