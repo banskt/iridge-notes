@@ -770,7 +770,7 @@ window.onload = wrap_img;
 <p>$\displaystyle \mathbf{a} = \frac{1}{\sigma^2} \mathbf{V}\mathbf{B}^{\mathsf{T}}\mathbf{X}^{\mathsf{T}}\mathbf{y}$,</p>
 <p>$\displaystyle \sigma^2 = \frac{1}{N} \left\{ \left\Vert \mathbf{y} - \mathbf{X}\mathbf{B}\mathbf{a} \right\Vert_{2}^{2} + \mathrm{Tr}\left(\mathbf{B}^{\mathsf{T}}\mathbf{X}^{\mathsf{T}}\mathbf{X}\mathbf{B}\mathbf{V} \right) \right\}$,</p>
 <p>$\displaystyle \sigma_w^2 = \frac{1}{P} \mathrm{Tr}\left(\mathbf{a}\mathbf{a}^{\mathsf{T}} + \mathbf{V}\right)$.</p>
-<p>The iteration should stop when the ELBO $F(q(\mathbf{b}, \mathbf{w}))$ converges to a tolerance value (<code>tol</code>). But, there is some mistake in the ELBO calculation and currently, I am not using any convergence criteria.</p>
+<p>The iteration stops when the ELBO $F(q(\mathbf{b}, \mathbf{W}))$ converges to a tolerance value (<code>tol</code>).</p>
 
 </div>
 </div>
@@ -1022,7 +1022,8 @@ window.onload = wrap_img;
 <p>$\displaystyle \sigma^2 = \frac{1}{N} \left\{ \left\Vert \mathbf{y} - \mathbf{X}\mathbf{A}\mathbf{m} \right\Vert_{2}^{2} + \mathrm{Tr}\left(\left(\mathbf{A}^{\mathsf{T}}\mathbf{X}^{\mathsf{T}}\mathbf{X}\mathbf{A} + \mathbf{\Lambda}_w\right)\mathbf{S} \right) + \mathbf{m}^{\mathsf{T}}\mathbf{\Lambda}_w\mathbf{m}\right\}$,</p>
 <p>$\displaystyle \sigma_b^2 = \frac{1}{P} \mathrm{Tr}\left(\mathbf{m}\mathbf{m}^{\mathsf{T}} + \mathbf{S}\right)$ and</p>
 <p>$\displaystyle \sigma_w^2 = \frac{1}{P} \sum_{j=1}^{P}\left(a_j^2 + v_j^2\right)$.</p>
-<p>The iteration stops when the ELBO $F(q(\mathbf{b}, \mathbf{W}))$ converges to a tolerance value (<code>tol</code>).</p>
+<p>The iteration should stop when the ELBO $F(q(\mathbf{b}, \mathbf{w}))$ converges to a tolerance value (<code>tol</code>). But, there is some mistake in the ELBO calculation and currently, I am not using any convergence criteria.</p>
+<p>$\displaystyle F(q) = P - \frac{N}{2}\ln(2\pi\sigma^2) - \frac{P}{2}\ln(\sigma_b^2) - \frac{P}{2}\ln(\sigma_w^2) - \frac{1}{2\sigma^2}\left\{\left\Vert \mathbf{y} - \mathbf{X}\mathbf{A}\mathbf{m} \right\Vert_2^2 + \mathrm{Tr}\left(\left(\mathbf{A}^{\mathsf{T}}\mathbf{X}^{\mathsf{T}}\mathbf{X}\mathbf{A} + \mathbf{\Lambda}_w\right)\mathbf{S} \right) + \mathbf{m}^{\mathsf{T}}\mathbf{\Lambda}_w\mathbf{m} \right\} - \frac{1}{2\sigma_b^2}\mathrm{Tr}\left(\mathbf{m}\mathbf{m}^{\mathsf{T}} + \mathbf{S}\right) - \frac{1}{2\sigma_w^2}\sum_{j=1}^{P}\left(a_j^2 + v_j^2\right) + \frac{1}{2}\ln\left\lvert\mathbf{S}\right\rvert + \sum_{j=1}^{P}\ln{v_j^2}$</p>
 
 </div>
 </div>
