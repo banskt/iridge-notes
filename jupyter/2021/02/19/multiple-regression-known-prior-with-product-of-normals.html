@@ -365,9 +365,8 @@ window.onload = wrap_img;
 <a class="anchor" href="#VEB-optimization" aria-hidden="true"><span class="octicon octicon-link"></span></a>VEB optimization<a class="anchor-link" href="#VEB-optimization"> </a>
 </h3>
 <p>When I fix the hyperparameters $\sigma$, $\sigma_b$ and $\sigma_w$ to true values, then the variational parameters $m_b$, $s_b$, $m_w$ and $s_w$ are reasonably obtained. Further, if I only fix $\sigma$ then the results are slightly worse but still we recover the signal. However, there is significant underfitting if I try to optimize both the hyperparameters and variational parameters.</p>
-<p>I also wanted to check what happens if I use $q(b, w) = q(b \mid w) q(
-On the contrary, if I hold $b$ and $w$ fixed to their means $m_b$ and $m_w$ while updating the alternate parameter, then I obtain overfitting.</p>
-<p>Note:</p>
+<p>I also wanted to check what happens if I use $q(b, w) = q(b \mid w) q(w)$ instead of mean field approximation. As a quick check, I hold $b$ and $w$ fixed to their means $m_b$ and $m_w$ while updating the alternate parameter. There is significant overfitting.</p>
+<p>Note: This is not exact, so I have to check and write the equations for $q(b, w) = q(b \mid w) q(w)$.</p>
 
 </div>
 </div>
