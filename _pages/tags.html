@@ -6,7 +6,7 @@ search_exclude: true
 ---
 
 {% if site.categories.size > 0 %}
-<h2>Contents</h2>
+<!-- <h2>Contents</h2> -->
 
   {% assign categories = "" | split:"" %}
   {% for c in site.categories %}
@@ -14,11 +14,17 @@ search_exclude: true
   {% endfor %}
   {% assign categories = categories | sort_natural %}
 
-  <ul>
+  <div class="post-content">
+    <p> This project aims to explore empirical Bayes multiple regression methods. Here is a collection of occassional unrefined Jupyter Notebooks from my daily work. 
+    For my other notebook collections, visit <a href="http://banskt.github.io">here</a>.
+    </p>
+  </div>
+
+  <!-- <ul>
   {% for category in categories %}
     <li><a href="#{{ category }}">{{ category }}</a></li>
   {% endfor %}
-  </ul>
+  </ul> -->
 
   {% for category in categories %}
       <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }}</h3>
