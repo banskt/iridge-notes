@@ -36,6 +36,8 @@ url: "https://banskt.github.io" # the base hostname & protocol for your site, e.
 #
 baseurl: "/iridge-notes" # the subpath of your site, e.g. "/blog".
 
+permalink: /:year/:month/:day/:slug:output_ext
+
 # Set author name, url and email in footer
 author:
   name: Saikat Banerjee
