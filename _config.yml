@@ -79,8 +79,8 @@ include:
   - _pages
 
 header_pages:
-  - about.md
-  - tags.md
+  - _pages/about.md
+  - _pages/tags.html
 
 # This specifies what badges are turned on by default for notebook posts.
 default_badges:
