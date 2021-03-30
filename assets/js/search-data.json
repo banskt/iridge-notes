@@ -172,7 +172,7 @@
   
       ,"page1": {
           "title": "About",
-          "content": "This project aims to explore and improve empirical Bayes multiple regression methods. The notebooks in this corner mostly include occassional unrefined ones from my daily work in order to keep track of progress. For my other lab notebooks, visit here. . This website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
+          "content": "This project aims to explore and improve empirical Bayes multiple regression methods. The notebooks in this corner mostly include occassional unrefined ones from my daily work in order to keep track of progress. For my other lab notebooks, visit here. . The website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
           "url": "https://banskt.github.io/iridge-notes/about/",
           "relUrl": "/about/",
           "date": ""
@@ -190,6 +190,15 @@
   
   
 
+  
+      ,"page6": {
+          "title": "Tags",
+          "content": "{% if site.categories.size &gt; 0 %} . {% assign categories = “” | split:”” %} {% for c in site.categories %} {% assign categories = categories | push: c[0] %} {% endfor %} {% assign categories = categories | sort_natural %} . This project aims to explore empirical Bayes multiple regression methods. Here is a collection of occassional unrefined Jupyter Notebooks from my daily work. For my other notebook collections, visit here. . . {% for category in categories %} &lt;h3 id =&quot;{{ category }}&quot;&gt;&lt;/i&gt; {{ category }}&lt;/h3&gt; {% for post in site.categories[category] %} {% if post.hide != true %} {%- assign date_format = site.minima.date_format | default: “%b %-d, %Y” -%} &lt;article class=&quot;archive-item&quot;&gt; &lt;p class=&quot;post-meta post-meta-title&quot;&gt;{{post.title}} • {{ post.date | date: date_format }}&lt;/p&gt; &lt;/article&gt; {% endif %} {% endfor %} {% endfor %} . {% endif %} .",
+          "url": "https://banskt.github.io/iridge-notes/categories/",
+          "relUrl": "/categories/",
+          "date": ""
+      }
+      
   
 
   
