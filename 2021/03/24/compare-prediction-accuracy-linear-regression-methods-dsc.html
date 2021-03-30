@@ -94,7 +94,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      3 min read
     
 </span></p>
 
@@ -171,7 +171,8 @@ which gives the 8 different scenarios presented here.</p>
 <li>Strong-signal ($n = 500$, $\rho = 0$, PVE $= 0.95$)</li>
 <li>EquiCorrGauss ($n = 100$, $\rho = 0.95$, PVE $= 0.5$)</li>
 </ol>
-<p>The <a href="https://stephens999.github.io/misc/mr_ash_vs_lasso.html">setting where Fabio Morgante found Lasso to be better than Mr.ASH</a> would be ($n = 100$, $\rho = 0$, PVE $= 0.95$).</p>
+<p>The <a href="https://stephens999.github.io/misc/mr_ash_vs_lasso.html">setting where Fabio Morgante found Lasso to be better than Mr.ASH</a> would be equivalent ($n = 100$, $\rho = 0$, PVE $= 0.95$).</p>
+<p>The <a href="https://github.com/banskt/mr-ash-dsc">simulation pipeline</a> is implemented using <a href="https://stephenslab.github.io/dsc-wiki/overview">Dynamic Statistical Comparisons (DSC)</a>.</p>
 
 </div>
 </div>
@@ -182,12 +183,7 @@ which gives the 8 different scenarios presented here.</p>
 <h3 id="Importing-packages">
 <a class="anchor" href="#Importing-packages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Importing packages<a class="anchor-link" href="#Importing-packages"> </a>
 </h3>
-<p>Apart from standard Python pacakages, some special packages are needed to be installed. Namely,</p>
-<ul>
-<li><a href="https://github.com/stephenslab/dsc">DSC</a></li>
-<li><a href="https://github.com/banskt/pymir">PyMir</a></li>
-</ul>
-<p>The main directory from the <a href="https://github.com/banskt/mr-ash-dsc">simulation repository</a> needs to be in path for importing some of the utilities.</p>
+<p>Non-standard packages include <a href="https://github.com/stephenslab/dsc">DSC</a> and <a href="https://github.com/banskt/pymir">PyMir</a>. The <a href="https://github.com/banskt/mr-ash-dsc">simulation repository</a> needs to be in path for importing some of the utilities.</p>
 
 </div>
 </div>
@@ -239,8 +235,7 @@ which gives the 8 different scenarios presented here.</p>
 <h3 id="DSC-results">
 <a class="anchor" href="#DSC-results" aria-hidden="true"><span class="octicon octicon-link"></span></a>DSC results<a class="anchor-link" href="#DSC-results"> </a>
 </h3>
-<p>The <a href="https://github.com/banskt/mr-ash-dsc">simulation pipeline</a> is implemented using <a href="https://stephenslab.github.io/dsc-wiki/overview">Dynamic Statistical Comparisons (DSC)</a>. 
-I have run the simulations using the following settings.</p>
+<p>I have run the simulations using the following settings.</p>
 
 </div>
 </div>
@@ -252,13 +247,7 @@ I have run the simulations using the following settings.</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">methods</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"ridge"</span><span class="p">,</span> <span class="s2">"lasso"</span><span class="p">,</span> <span class="s2">"lasso_1se"</span><span class="p">,</span> <span class="s2">"elastic_net"</span><span class="p">,</span>
-           <span class="s2">"elastic_net_1se"</span><span class="p">,</span> <span class="s2">"l0learn"</span><span class="p">,</span> <span class="s2">"scad"</span><span class="p">,</span> <span class="s2">"mcp"</span><span class="p">,</span> 
-           <span class="s2">"susie"</span><span class="p">,</span> <span class="s2">"varbvs"</span><span class="p">,</span> <span class="s2">"varbvsmix"</span><span class="p">,</span> <span class="s2">"blasso"</span><span class="p">,</span> <span class="s2">"bayesb"</span><span class="p">,</span>
-           <span class="s2">"mr_ash"</span><span class="p">,</span> <span class="s2">"mr_ash_init"</span><span class="p">]</span>
-
-<span class="c1"># Dimensions (n, p)</span>
-<span class="n">highdims</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">highdims</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 <span class="n">lowdims</span>  <span class="o">=</span> <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 
 <span class="c1"># fraction of non-zero predictors, sfrac = p_causal / p</span>
@@ -316,8 +305,8 @@ I have run the simulations using the following settings.</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Calling: dsc-query /home/saikat/Documents/work/ebmr/simulation/mr-ash-dsc/dsc/dsc_result -o /tmp/RtmpAJaV5n/file2af576a471886.csv --target "simulate simulate.dims simulate.se simulate.rho simulate.sfrac simulate.pve fit fit.DSC_TIME mse.err" --force 
-Loaded dscquery output table with 17920 rows and 12 columns.
+<pre>Calling: dsc-query /home/saikat/Documents/work/ebmr/simulation/mr-ash-dsc/dsc/dsc_result -o /tmp/Rtmp3RHxMj/fileacb537e59aa8b.csv --target "simulate simulate.dims simulate.se simulate.rho simulate.sfrac simulate.pve fit fit.DSC_TIME mse.err" --force 
+Loaded dscquery output table with 21280 rows and 12 columns.
 
 </pre>
 </div>
@@ -467,7 +456,7 @@ Loaded dscquery output table with 17920 rows and 12 columns.
       <td>...</td>
     </tr>
     <tr>
-      <th>17915</th>
+      <th>21275</th>
       <td>20</td>
       <td>equicorrgauss</td>
       <td>(100,200)</td>
@@ -481,7 +470,7 @@ Loaded dscquery output table with 17920 rows and 12 columns.
       <td>1.594033</td>
     </tr>
     <tr>
-      <th>17916</th>
+      <th>21276</th>
       <td>20</td>
       <td>equicorrgauss</td>
       <td>(500,200)</td>
@@ -495,7 +484,7 @@ Loaded dscquery output table with 17920 rows and 12 columns.
       <td>1.441453</td>
     </tr>
     <tr>
-      <th>17917</th>
+      <th>21277</th>
       <td>20</td>
       <td>equicorrgauss</td>
       <td>(100,200)</td>
@@ -509,7 +498,7 @@ Loaded dscquery output table with 17920 rows and 12 columns.
       <td>3.004566</td>
     </tr>
     <tr>
-      <th>17918</th>
+      <th>21278</th>
       <td>20</td>
       <td>equicorrgauss</td>
       <td>(500,200)</td>
@@ -523,7 +512,7 @@ Loaded dscquery output table with 17920 rows and 12 columns.
       <td>2.508451</td>
     </tr>
     <tr>
-      <th>17919</th>
+      <th>21279</th>
       <td>20</td>
       <td>equicorrgauss</td>
       <td>(100,200)</td>
@@ -538,7 +527,7 @@ Loaded dscquery output table with 17920 rows and 12 columns.
     </tr>
   </tbody>
 </table>
-<p>17920 rows × 11 columns</p>
+<p>21280 rows × 11 columns</p>
 </div>
 </div>
 
@@ -565,12 +554,12 @@ Loaded dscquery output table with 17920 rows and 12 columns.
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">whichmethods</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"l0learn"</span><span class="p">,</span>            <span class="c1"># L0</span>
-                <span class="s2">"lasso"</span><span class="p">,</span>              <span class="c1"># L1</span>
-                <span class="c1">#"lasso_1se",         # L1 (lambda is chosen such that error is within one standard error of the minimum)</span>
-                <span class="s2">"ridge"</span><span class="p">,</span>              <span class="c1"># L2</span>
-                <span class="s2">"elastic_net"</span><span class="p">,</span>        <span class="c1"># </span>
-                <span class="c1">#"elastic_net_1se",   # lambda is chosen such that error is within one standard error of the minimum</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">whichmethods</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"l0learn"</span><span class="p">,</span>
+                <span class="s2">"lasso"</span><span class="p">,</span>
+                <span class="c1">#"lasso_1se",</span>
+                <span class="s2">"ridge"</span><span class="p">,</span>
+                <span class="s2">"elastic_net"</span><span class="p">,</span>
+                <span class="c1">#"elastic_net_1se", </span>
                 <span class="s2">"scad"</span><span class="p">,</span> 
                 <span class="s2">"mcp"</span><span class="p">,</span>
                 <span class="s2">"blasso"</span><span class="p">,</span> 
@@ -578,8 +567,7 @@ Loaded dscquery output table with 17920 rows and 12 columns.
                 <span class="s2">"susie"</span><span class="p">,</span> 
                 <span class="s2">"varbvs"</span><span class="p">,</span> 
                 <span class="s2">"varbvsmix"</span><span class="p">,</span> 
-                <span class="s2">"mr_ash"</span><span class="p">,</span>
-               <span class="p">]</span>
+                <span class="s2">"mr_ash"</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -705,6 +693,9 @@ Loaded dscquery output table with 17920 rows and 12 columns.
     
     
 <div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
 <div class="input">
 
 <div class="inner_cell">
@@ -735,6 +726,7 @@ Loaded dscquery output table with 17920 rows and 12 columns.
 </div>
 </div>
 
+    </details>
 <div class="output_wrapper">
 <div class="output">
 
