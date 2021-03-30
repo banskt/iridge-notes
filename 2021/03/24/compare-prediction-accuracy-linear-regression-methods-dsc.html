@@ -171,8 +171,8 @@ which gives the 8 different scenarios presented here.</p>
 <li>Strong-signal ($n = 500$, $\rho = 0$, PVE $= 0.95$)</li>
 <li>EquiCorrGauss ($n = 100$, $\rho = 0.95$, PVE $= 0.5$)</li>
 </ol>
-<p>The <a href="https://stephens999.github.io/misc/mr_ash_vs_lasso.html">setting where Fabio Morgante found Lasso to be better than Mr.ASH</a> would be equivalent ($n = 100$, $\rho = 0$, PVE $= 0.95$).</p>
-<p>The <a href="https://github.com/banskt/mr-ash-dsc">simulation pipeline</a> is implemented using <a href="https://stephenslab.github.io/dsc-wiki/overview">Dynamic Statistical Comparisons (DSC)</a>.</p>
+<p>The <a href="https://stephens999.github.io/misc/mr_ash_vs_lasso.html">setting where Fabio Morgante found Lasso to be better than Mr.ASH</a> would be equivalent to ($n = 100$, $\rho = 0$, PVE $= 0.95$).</p>
+<p>The <a href="https://github.com/stephenslab/eb-linreg-dsc">simulation pipeline</a> is implemented using <a href="https://stephenslab.github.io/dsc-wiki/overview">Dynamic Statistical Comparisons (DSC)</a>.</p>
 
 </div>
 </div>
@@ -183,7 +183,7 @@ which gives the 8 different scenarios presented here.</p>
 <h3 id="Importing-packages">
 <a class="anchor" href="#Importing-packages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Importing packages<a class="anchor-link" href="#Importing-packages"> </a>
 </h3>
-<p>Non-standard packages include <a href="https://github.com/stephenslab/dsc">DSC</a> and <a href="https://github.com/banskt/pymir">PyMir</a>. The <a href="https://github.com/banskt/mr-ash-dsc">simulation repository</a> needs to be in path for importing some of the utilities.</p>
+<p>Non-standard packages include <a href="https://github.com/stephenslab/dsc">DSC</a> and <a href="https://github.com/banskt/pymir">PyMir</a>. The <a href="https://github.com/stephenslab/eb-linreg-dsc">simulation repository</a> needs to be in path for importing some of the utilities.</p>
 
 </div>
 </div>
@@ -205,13 +205,11 @@ which gives the 8 different scenarios presented here.</p>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">collections</span>
 
-<span class="n">srcdir</span> <span class="o">=</span> <span class="s2">"/home/saikat/Documents/work/ebmr/simulation/mr-ash-dsc"</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">srcdir</span><span class="p">)</span>
-
-
-<span class="kn">from</span> <span class="nn">analysis</span> <span class="kn">import</span> <span class="n">dscrutils2py</span> <span class="k">as</span> <span class="n">dscrutils</span>
-<span class="kn">from</span> <span class="nn">analysis</span> <span class="kn">import</span> <span class="n">methodprops</span>
-<span class="kn">from</span> <span class="nn">analysis</span> <span class="kn">import</span> <span class="n">methodplots</span>
+<span class="n">srcdir</span> <span class="o">=</span> <span class="s2">"/home/saikat/Documents/work/ebmr/simulation/eb-linreg-dsc"</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">srcdir</span><span class="p">,</span> <span class="s2">"analysis"</span><span class="p">))</span>
+<span class="kn">import</span> <span class="nn">dscrutils2py</span> <span class="k">as</span> <span class="nn">dscrutils</span>
+<span class="kn">import</span> <span class="nn">methodprops</span>
+<span class="kn">import</span> <span class="nn">methodplots</span>
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.gridspec</span> <span class="k">as</span> <span class="nn">gridspec</span>
@@ -305,7 +303,7 @@ which gives the 8 different scenarios presented here.</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Calling: dsc-query /home/saikat/Documents/work/ebmr/simulation/mr-ash-dsc/dsc/dsc_result -o /tmp/Rtmp3RHxMj/fileacb537e59aa8b.csv --target "simulate simulate.dims simulate.se simulate.rho simulate.sfrac simulate.pve fit fit.DSC_TIME mse.err" --force 
+<pre>Calling: dsc-query /home/saikat/Documents/work/ebmr/simulation/eb-linreg-dsc/dsc/dsc_result -o /tmp/RtmpRh1NxB/file66416d28fb15.csv --target "simulate simulate.dims simulate.se simulate.rho simulate.sfrac simulate.pve fit fit.DSC_TIME mse.err" --force 
 Loaded dscquery output table with 21280 rows and 12 columns.
 
 </pre>
